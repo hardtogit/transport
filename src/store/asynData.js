@@ -19,7 +19,7 @@ const counterStore = observable({
       dataSignMapToRequest[sign]().then((data)=>{
         console.log(data)
         resolve(data)
-        setTimeout(()=>{this[sign].loading=false},3000)
+        setTimeout(()=>{this[sign]={data:{name:'张三'},loading:false}},3000)
         console.log('aa')
       }).catch(()=>{
         setTimeout(()=>{this[sign].loading=false},3000)

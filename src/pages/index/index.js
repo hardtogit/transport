@@ -48,10 +48,9 @@ class Index extends Component {
     const { counterStore: { LOCATION} } = this.props
     return (
       <View className='index'>
-        <Button onClick={this.increment}>+</Button>
-        <Button onClick={this.decrement}>-</Button>
-        <Button onClick={this.incrementAsync}>Add Async</Button>
-        <Text>{LOCATION.loading}</Text>
+        <Button onClick={this.incrementAsync}>{LOCATION.loading&&'数据获取中...'||'获取数据'}</Button>
+        <Text>loading:{LOCATION.loading}</Text>
+        <Text>姓名：{LOCATION.data.name}</Text>
       </View>
     )
   }
